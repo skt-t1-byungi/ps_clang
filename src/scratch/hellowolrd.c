@@ -3,4 +3,5 @@
 int main(void) {
   char *str = "hello world~";
   printf("%s", str);
+  return 0;
 }
