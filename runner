@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ $# -eq 0 ] || [ ! -e $1 ]; then
+    echo "실행할 c 파일주소 없엉~"
+    exit 1
+fi
+if [ $(docker images -q clang_test) == "" ]; then
+    docker build ./ -t clang_test
+fi
+docker run --rm -v $(pwd)/src:/usr/src -e file=$1 clang_test
