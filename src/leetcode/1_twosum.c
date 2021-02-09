@@ -12,7 +12,8 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
     }
   }
 OUT:
-  arr = (int[]){i, j};
+  arr[0] = i;
+  arr[1] = j;
   *returnSize = 2;
   return arr;
 }
@@ -25,5 +26,6 @@ int main(void) {
   for (size_t i = 0; i < len; i++) {
     printf("%d\n", arr[i]);
   }
+  free(arr);
   return 0;
 }
