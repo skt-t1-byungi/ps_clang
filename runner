@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $# -eq 0 ] || [ ! -e $1 ]; then
+if [ $# -eq 0 ] || [ ! -f $1 ]; then
     echo "실행할 c 파일주소 없엉~"
     exit 1
 fi
