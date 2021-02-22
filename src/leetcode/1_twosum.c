@@ -3,28 +3,28 @@
 #include <stdlib.h>
 #include "libtap/tap.h"
 
-int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
-  int *arr = malloc(2 * sizeof(int));
+int *twosum(int *nums, int len, int target, int *ret_len) {
+  int *ret = malloc(2 * sizeof(int));
   size_t i, j;
-  for (i = 0; i < numsSize; i++) {
-    for (j = i + 1; j < numsSize; j++) {
+  for (i = 0; i < len; i++) {
+    for (j = i + 1; j < len; j++) {
       if (nums[j] == target - nums[i])
-        goto OUT;
+        goto EXIT;
     }
   }
-OUT:
-  arr[0] = i;
-  arr[1] = j;
-  *returnSize = 2;
-  return arr;
+EXIT:
+  ret[0] = i;
+  ret[1] = j;
+  *ret_len = 2;
+  return ret;
 }
 
 int main(void) {
-  int len;
   int nums[] = {2, 7, 11, 15};
-  int numsSize = (int)(sizeof(nums) / sizeof(int));
-  int *arr = twoSum(nums, numsSize, 9, &len);
-  cmp_mem(arr, (int[]){0, 1}, 2);
-  free(arr);
+  int ret_len;
+  int nums_len = (int)(sizeof(nums) / sizeof(int));
+  int *ret = twosum(nums, nums_len, 9, &ret_len);
+  cmp_mem(ret, (int[]){0, 1}, 2);
+  free(ret);
   return 0;
 }
