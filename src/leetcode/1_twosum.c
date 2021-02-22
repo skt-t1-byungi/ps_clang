@@ -24,7 +24,8 @@ int main(void) {
     int ret_len;
     int nums_len = (int)(sizeof(nums) / sizeof(int));
     int *ret = twosum(nums, nums_len, 9, &ret_len);
-    cmp_mem(ret, (int[]){0, 1}, 2);
+    int expected[] = {0, 1};
+    cmp_mem(ret, expected, sizeof(expected));
     free(ret);
     return 0;
 }
