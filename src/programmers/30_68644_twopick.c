@@ -40,6 +40,7 @@ int main(void) {
     int *got1 = solution(arr1, arr1_len);
     int expected1[] = {2, 3, 4, 5, 6, 7};
     cmp_mem(got1, expected1, sizeof(expected1));
+    free(got1);
 
     memset(map, false, sizeof(map));
 
@@ -48,4 +49,5 @@ int main(void) {
     int *got2 = solution(arr2, arr2_len);
     int expected2[] = {2, 5, 7, 9, 12};
     cmp_mem(got2, expected2, sizeof(expected2));
+    free(got2);
 }
