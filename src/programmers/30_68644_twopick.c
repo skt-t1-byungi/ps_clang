@@ -10,11 +10,7 @@ bool map[200] = {
     false,
 };
 
-int cmp(const void *ap, const void *bp) {
-    int a = *(int *)ap;
-    int b = *(int *)bp;
-    return a - b;
-}
+int cmp(const void *a, const void *b) { return *(int *)a - *(int *)b; }
 
 int *solution(int numbers[], size_t numbers_len) {
     int *ret = (int *)malloc(sizeof(int));
@@ -30,6 +26,7 @@ int *solution(int numbers[], size_t numbers_len) {
             }
         }
     }
+
     qsort(ret, ret_len, sizeof(int), cmp);
     return ret;
 }
