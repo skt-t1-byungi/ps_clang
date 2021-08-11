@@ -1,6 +1,7 @@
+#include <math.h>
+#include <stdio.h>
+
 #include "libtap/tap.h"
-#include "math.h"
-#include "stdio.h"
 
 long long solution(int price, int money, int count) {
     long long n = price * ((pow(count, 2) + count) / 2) - money;
