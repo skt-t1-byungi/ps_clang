@@ -6,7 +6,8 @@
 
 int solution(int n) {
     int digit = 0, ret = 0;
-    while (pow(3, ++digit) <= n) {}
+    while (pow(3, ++digit) <= n) {
+    }
     do {
         ret += n % 3 * pow(3, --digit);
         n /= 3;
